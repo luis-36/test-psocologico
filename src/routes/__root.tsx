@@ -3,21 +3,6 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-function RootDocument({ children }: { children: React.ReactNode }) {
-  return (
-    <html>
-      <head>
-        <HeadContent />   {/* ← Esto es obligatorio */}
-      </head>
-      <body>
-        {/* tu contenido */}
-        <Scripts />       {/* ← Esto también */}
-      </body>
-    </html>
-  )
-}
-
-
 const APP_NAME = "Noesis";
 
 export const Route = createRootRoute({
