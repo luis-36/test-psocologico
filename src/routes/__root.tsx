@@ -30,6 +30,13 @@ export const Route = createRootRoute({
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
     ],
+    scripts: [
+      {
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6310235398565319",
+        crossOrigin: "anonymous",
+      },
+    ],
   }),
   component: () => (
     <html lang="es" className="antialiased" suppressHydrationWarning>
