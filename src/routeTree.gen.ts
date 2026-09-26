@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as AdsTxtRouteImport } from './routes/ads.txt'
 import { Route as LecturaSlugRouteImport } from './routes/lectura.$slug'
 import { Route as TestSlugRouteImport } from './routes/test.$slug'
 
@@ -22,6 +23,11 @@ const IndexRoute = IndexRouteImport.update({
 const PerfilRoute = PerfilRouteImport.update({
   id: '/perfil',
   path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdsTxtRoute = AdsTxtRouteImport.update({
+  id: '/ads/txt',
+  path: '/ads/txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LecturaSlugRoute = LecturaSlugRouteImport.update({
@@ -38,12 +44,14 @@ const TestSlugRoute = TestSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/perfil': typeof PerfilRoute
+  '/ads/txt': typeof AdsTxtRoute
   '/lectura/$slug': typeof LecturaSlugRoute
   '/test/$slug': typeof TestSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/perfil': typeof PerfilRoute
+  '/ads/txt': typeof AdsTxtRoute
   '/lectura/$slug': typeof LecturaSlugRoute
   '/test/$slug': typeof TestSlugRoute
 }
@@ -51,20 +59,23 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/perfil': typeof PerfilRoute
+  '/ads/txt': typeof AdsTxtRoute
   '/lectura/$slug': typeof LecturaSlugRoute
   '/test/$slug': typeof TestSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/perfil' | '/lectura/$slug' | '/test/$slug'
+  fullPaths: '/' | '/perfil' | '/ads/txt' | '/lectura/$slug' | '/test/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/perfil' | '/lectura/$slug' | '/test/$slug'
-  id: '__root__' | '/' | '/perfil' | '/lectura/$slug' | '/test/$slug'
+  to: '/' | '/perfil' | '/ads/txt' | '/lectura/$slug' | '/test/$slug'
+  id:
+    '__root__' | '/' | '/perfil' | '/ads/txt' | '/lectura/$slug' | '/test/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PerfilRoute: typeof PerfilRoute
+  AdsTxtRoute: typeof AdsTxtRoute
   LecturaSlugRoute: typeof LecturaSlugRoute
   TestSlugRoute: typeof TestSlugRoute
 }
@@ -83,6 +94,13 @@ declare module '@tanstack/react-router' {
       path: '/perfil'
       fullPath: '/perfil'
       preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ads/txt': {
+      id: '/ads/txt'
+      path: '/ads/txt'
+      fullPath: '/ads/txt'
+      preLoaderRoute: typeof AdsTxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lectura/$slug': {
@@ -105,6 +123,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PerfilRoute: PerfilRoute,
+  AdsTxtRoute: AdsTxtRoute,
   LecturaSlugRoute: LecturaSlugRoute,
   TestSlugRoute: TestSlugRoute,
 }
