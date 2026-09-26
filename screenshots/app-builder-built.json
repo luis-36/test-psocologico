@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Noesis",
+      "hasCanvas": false,
+      "bodyTextLen": 1198,
+      "bodyTextHash": "ed0d7de327b555bdf3203ddd7da13c24564b5913ad331c2422de96b5a6ae19ef",
+      "bodyTextPrefix": "Saltar al contenido Noesis Perfil 0 / 3 LABORATORIO DE LECTURA T",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Noesis",
+      "hasCanvas": false,
+      "bodyTextLen": 1191,
+      "bodyTextHash": "c48df1768bf0eb2354877b554614a9ebc8fb9827be09bb70e4f31f99bb74e6b1",
+      "bodyTextPrefix": "Saltar al contenido Noesis 0 / 3 LABORATORIO DE LECTURA Tres lec",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
